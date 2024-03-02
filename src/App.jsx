@@ -1,11 +1,25 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
+import { Header } from "./Components/Atoms"
+import { AllProduct, Login } from "./pages"
 
 function App() {
 
 
   return (
     <>
-      <Home/>      
+      <BrowserRouter>
+        <div className='fixed top-0 left-0 w-full px-[10%] bg-gray-50/60'>
+          <Header />
+        </div>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products/favorit" element={<AllProduct />} />
+          <Route path="/products/terlaris" element={<AllProduct />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
