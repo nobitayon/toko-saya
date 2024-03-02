@@ -21,7 +21,7 @@ const Home = () => {
     navigate("/products/favorit")
   }
 
-  console.log("home",products)
+
 
   return (
     <div className='px-[10%] pb-20 w-full min-h-screen'>
@@ -32,13 +32,13 @@ const Home = () => {
       <ProductSection
         titleSection="Produk Terlaris"
         titleMore="Lihat Semua" 
-        data={products}
+        data={products.slice(0,6)}
         clickMore = {()=>clickMoreTerlaris()}
       />
       <ProductSection 
         titleSection="Produk Favorit" 
         titleMore="Lihat Semua"
-        data={products} 
+        data={products.slice(0,6)} 
         clickMore = {()=>clickMoreFavorit()}
       />
     </div>

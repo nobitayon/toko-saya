@@ -25,13 +25,13 @@ const AllProduct = () => {
   }, [])
 
   return (
-    <div>
-      <div>AllProduct</div>
+    <div className='py-20 px-[10%]'>
+      <h1 className='pb-10 text-xl font-bold'>AllProduct</h1>
 
-      <div className='flex justify-between'>
+      <div className='grid grid-cols-6 gap-4'>
         {
           products.map((item, index) => {
-            return <Card key={index} className="w-[16%]" image={item.image} />
+            return <Card key={index} image={item.image} />
           })
         }
       </div>
