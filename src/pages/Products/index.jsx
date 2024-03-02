@@ -10,8 +10,9 @@ const AllProduct = () => {
   const products = useSelector((state) => state.product.products)
 
 
+
   const handleClick = (id) => {
-    navigate(`/products/${id}`)
+    navigate(`/product/${id}`)
   }
 
   const getProducts = useCallback(() => {
@@ -31,7 +32,7 @@ const AllProduct = () => {
       <div className='grid grid-cols-6 gap-4'>
         {
           products.map((item, index) => {
-            return <Card key={index} image={item.image} />
+            return <Card key={index} image={item.image} onClick={()=>handleClick(item.id)}/>
           })
         }
       </div>
